@@ -2,6 +2,9 @@
   "name": "malkgular",
   "version": "0.0.0",
   "license": "MIT",
+  "authors": [
+    "Juan Carlos González Cabrero <malkomich@gmail.com>"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +13,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
@@ -20,6 +23,7 @@
     "@angular/platform-browser": "^2.4.0",
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
+    "@vaadin/angular2-polymer": "^1.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.7.6"

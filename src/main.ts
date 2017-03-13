@@ -8,4 +8,6 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+document.addEventListener('WebComponentsReady', function() {
+  platformBrowserDynamic().bootstrapModule(AppModule);
+});
