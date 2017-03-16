@@ -3,6 +3,20 @@ app-toolbar {
   color: var(--dark-theme-text-color);
 }
 
+paper-icon-button {
+  --paper-icon-button-ink-color: white;
+}
+
+paper-icon-button + [main-title] {
+  margin-left: 24px;
+}
+paper-progress {
+  display: block;
+  width: 100%;
+  --paper-progress-active-color: rgba(255, 255, 255, 0.5);
+  --paper-progress-container-color: transparent;
+}
+
 #startDrawer {
   --app-drawer-content-container: {
     box-shadow: 1px 0 2px 1px rgba(0,0,0,0.18);
@@ -21,10 +35,15 @@ app-header {
   background-color: #4285f4;
   color: #fff;
 }
-app-header paper-icon-button {
-  --paper-icon-button-ink-color: white;
+
+app-drawer {
+  --app-drawer-scrim-background: rgba(0, 0, 100, 0.8);
+  --app-drawer-content-container: {
+    background-color: #B0BEC5;
+  }
+}
+sample-content {
+  padding-top: 64px;
 }
 
-sample-content {
-  padding-top: 192px;
-}
+/* ===================== */
