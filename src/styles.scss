@@ -1,4 +1,4 @@
-/* Global styles */
+/* ==========< Global styles >========== */
 html, body {
   margin: 0;
   font-family: 'Roboto', 'Noto', sans-serif;
@@ -6,3 +6,15 @@ html, body {
   background: #f1f1f1;
   max-height: 368px;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ==========< Utility classes >========== */
+.hide {
+  visibility: hidden;
+}
+/* ==================== */

@@ -1,0 +1,8 @@
+<vaadin-combo-box
+    [label]="myLabel"
+    [items]="myItems"
+    [(value)]="myValue"
+    (value-changed)="onComboChange($event)">
+</vaadin-combo-box>
+
+<paper-input [(value)]="myValue"></paper-input>
