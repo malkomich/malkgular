@@ -1,13 +1,14 @@
-import { Component, Inject, ElementRef } from '@angular/core';
+import { Component, Inject, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'mlk-main',
   templateUrl: './main.component.html',
   styleUrls: [ './main.component.scss' ]
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
 
-  elementRef: ElementRef;
+  /* UI Elements */
+  drawer;
 
   title = 'MalkGular!';
 
@@ -16,15 +17,18 @@ export class MainComponent {
   drawerVisible: boolean;
 
   constructor(
-    @Inject(ElementRef) elementRef: ElementRef
+    @Inject(ElementRef) public elementRef: ElementRef
   ) {
-    this.elementRef = elementRef;
     this.sections = [
       { name: 'cards', title: 'Cards' },
       { name: 'tables', title: 'Tables' },
       { name: 'forms', title: 'Forms' }
     ];
-    this.drawerVisible = false;
+  }
+
+  ngOnInit() {
+    this.drawer = this.elementRef.nativeElement.querySelector('#drawer');
+    this.drawerVisible = this.drawer.opened;
   }
 
   public onSectionSelected(event): void {
@@ -32,11 +36,10 @@ export class MainComponent {
   }
 
   public toggleDrawer(event): void {
-    const drawer = this.elementRef.nativeElement.querySelector('#drawer');
-    drawer.toggle();
+    this.drawer.toggle();
   }
 
   public drawerTransitioned(event): void {
-    this.drawerVisible = !this.drawerVisible;
+    this.drawerVisible = this.drawer.opened;
   }
 }
