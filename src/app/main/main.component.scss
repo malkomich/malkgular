@@ -56,19 +56,23 @@ app-drawer {
     box-shadow: -1px 0 2px 1px rgba(0,0,0,0.18);
   }
 }
-.nav-menu {
-  background: $primary-color;
+paper-menu.nav-menu {
+  background-color: $sidenav-color;
   color: $text-color;
+  padding-top: 20px;
+  @apply(--layout-horizontal);
+  @apply(--layout-center-justified);
+  @apply(--layout-wrap);
 
-  a {
+  --paper-menu-selected-item: {
+    background-color: #888;
+  };
+
+  paper-item {
     display: block;
     padding: 12px 16px;
     font-size: 20px;
     font-weight: 500;
-
-    &.iron-selected {
-      // background-color: #888;
-    }
   }
 }
 /* ==================== */

@@ -1,11 +1,12 @@
 <link rel="import" href="assets/bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="assets/bower_components/iron-flex-layout/iron-flex-layout.html">
 
 <app-drawer-layout drawer-width="288px" responsive-width="1000px" fullbleed>
   <app-drawer id="drawer" swipe-open
       (app-drawer-transitioned)="drawerTransitioned($event)">
     <app-header-layout has-scrolling-region>
 
-      <app-header fixed>
+      <app-header shadow fixed condenses effects="waterfall">
 
         <!-- top toolbar -->
         <app-toolbar></app-toolbar>
@@ -18,17 +19,20 @@
       </app-header>
 
       <!-- nav menu -->
-      <iron-selector
-          class="nav-menu"
-          selected="selectedSection"
-          (iron-select)="onSectionSelected($event)"
-          attr-for-selected="name">
-        <div *ngFor="let section of sections">
-          <a [routerLink]="[section.name]">
-            {{ section.title }}
-          </a>
-        </div>
-      </iron-selector>
+      <div class="horizontal-section">
+        <paper-menu
+            class="nav-menu"
+            [selected]="selectedSection"
+            (iron-select)="onSectionSelected($event)">
+
+            <a [routerLink]="[section.name]" *ngFor="let section of sections">
+              <paper-item>
+              {{ section.title }}
+              </paper-item>
+            </a>
+
+        </paper-menu>
+      </div>
 
     </app-header-layout>
   </app-drawer>
