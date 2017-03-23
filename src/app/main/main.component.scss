@@ -1,4 +1,4 @@
-@import '~assets/_vars.scss';
+@import '~assets/style/_vars.scss';
 
 :host {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -56,24 +56,28 @@ app-drawer {
     box-shadow: -1px 0 2px 1px rgba(0,0,0,0.18);
   }
 }
+.sidebar {
+  // margin-top: 128px;
+}
 paper-menu.nav-menu {
-  background-color: $sidenav-color;
+  // background-color: $sidenav-color;
   color: $text-color;
   padding-top: 20px;
-  @apply(--layout-horizontal);
-  @apply(--layout-center-justified);
-  @apply(--layout-wrap);
 
   --paper-menu-selected-item: {
     background-color: #888;
   };
 
-  paper-item {
+  a {
     display: block;
     padding: 12px 16px;
-    font-size: 20px;
-    font-weight: 500;
+
+    paper-item {
+      font-size: 20px;
+      font-weight: 500;
+    }
   }
+  
 }
 /* ==================== */
 

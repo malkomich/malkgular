@@ -1,4 +1,5 @@
 import { Component, Inject, ElementRef, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'mlk-main',
@@ -7,32 +8,38 @@ import { Component, Inject, ElementRef, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  /* UI Elements */
-  drawer;
-
-  title = 'MalkGular!';
+  title = 'PRUEBA!';
 
   sections: Object[];
-  selectedSection: Object;
+  selectedSection: number;
   drawerVisible: boolean;
 
+  /* UI Elements */
+  private drawer;
+  private sidebar;
+
   constructor(
-    @Inject(ElementRef) public elementRef: ElementRef
+    @Inject(ElementRef) public elementRef: ElementRef,
+    translate: TranslateService
   ) {
+    translate.setDefaultLang('en');
+
     this.sections = [
-      { name: 'cards', title: 'Cards' },
-      { name: 'tables', title: 'Tables' },
-      { name: 'forms', title: 'Forms' }
+      { name: 'cards', label: 'CARDS' },
+      { name: 'tables', label: 'TABLES' },
+      { name: 'forms', label: 'FORMS' }
     ];
   }
 
   ngOnInit() {
     this.drawer = this.elementRef.nativeElement.querySelector('#drawer');
     this.drawerVisible = this.drawer.opened;
+    this.sidebar = this.elementRef.nativeElement.querySelector('#sidebar');
   }
 
   public onSectionSelected(event): void {
-    this.selectedSection = event.target.selected;
+    this.selectedSection = this.sidebar.selected;
+    this.toggleDrawer(event);
   }
 
   public toggleDrawer(event): void {

@@ -13,7 +13,12 @@
     "target": "es5",
     "module": "es2015",
     "baseUrl": "",
-    "types": []
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "types": [
+      "hammerjs"
+    ]
   },
   "exclude": [
     "test.ts",

@@ -1,20 +1,9 @@
-/* ==========< Global styles >========== */
-html, body {
-  margin: 0;
-  font-family: 'Roboto', 'Noto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background: #f1f1f1;
-  max-height: 368px;
-}
+/* ==========< Global style >========== */
 
-a {
-  text-decoration: none;
-  color: inherit;
-  font-size: inherit;
-}
+@import '~assets/style/_vars.scss';
 
-/* ==========< Utility classes >========== */
-.hide {
-  visibility: hidden;
-}
-/* ==================== */
+@import '~assets/style/_default.scss';
+
+@import '~assets/style/_theme.scss';
+
+@import '~assets/style/_util.scss';

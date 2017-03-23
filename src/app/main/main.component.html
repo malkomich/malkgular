@@ -19,15 +19,20 @@
       </app-header>
 
       <!-- nav menu -->
-      <div class="horizontal-section">
+      <div class="sidebar">
         <paper-menu
-            class="nav-menu"
+            id="sidebar"
+            color="primary"
+            class="nav-menu hue-1"
             [selected]="selectedSection"
             (iron-select)="onSectionSelected($event)">
 
-            <a [routerLink]="[section.name]" *ngFor="let section of sections">
+            <a md-button color="primary"
+                class="hue-1"
+                [routerLink]="[section.name]"
+                *ngFor="let section of sections">
               <paper-item>
-              {{ section.title }}
+                {{ section.label | translate }}
               </paper-item>
             </a>
 

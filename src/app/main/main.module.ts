@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { SharedModule } from '../shared/shared.module';
+
 import { MainComponent } from './main.component';
 
 import { CardsComponent } from '../cards/cards.component';
@@ -19,7 +21,7 @@ import { MainRoutingModule } from './main.routing.module';
     FormsComponent
   ],
   imports: [
-    BrowserModule,
+    SharedModule,
     MainRoutingModule
   ],
   exports: [
